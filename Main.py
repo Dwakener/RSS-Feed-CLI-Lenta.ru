@@ -8,6 +8,7 @@ import feedparser
 import os
 import climage
 from datetime import datetime
+import textwrap
 
 class NewsWindow:
     def __init__(self):
@@ -48,7 +49,7 @@ class NewsWindow:
                 try:
                     if isinstance(description, str):
                         print(formatted_date+"\n")
-                        print(description)
+                        print(textwrap.fill(description, width=80))
                     else:
                         print("No description available")
                 except Exception as e:
